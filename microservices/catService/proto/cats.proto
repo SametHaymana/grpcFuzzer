@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package Cat;
+
+message Cat{
+    int32 id = 1;
+    string name = 2;
+    optional string breed = 3;
+    optional int32 age = 4;
+}
+
+message GetCatsRequest {
+    int32 page = 1;
+    int32 limit = 2;
+}
+
+message GetCatsResponse {
+    repeated Cat cats = 1;
+}
+
+message GetCatRequest {
+    int32 id = 1;
+}
+
+message GetCatResponse {
+    Cat cat = 1;
+}
+
+message CreateCatRequest {
+    string name = 1;
+    optional string breed = 2;
+    optional int32 age = 3;
+}
+
+message CreateCatResponse {
+    Cat cat = 1;
+}
+
+message UpdateCatRequest {
+    int32 id = 1;
+    optional string name = 2;
+    optional string breed = 3;
+    optional int32 age = 4;
+}
+
+message UpdateCatResponse {
+    Cat cat = 1;
+}
+
+message DeleteCatRequest {
+    int32 id = 1;
+}
+
+message DeleteCatResponse {
+    Cat cat = 1;
+}
+
+
+service Cats {
+    rpc GetCats (GetCatsRequest) returns (GetCatsResponse) {}
+    rpc GetCat (GetCatRequest) returns (GetCatResponse) {}
+    rpc CreateCat (CreateCatRequest) returns (CreateCatResponse) {}
+    rpc UpdateCat (UpdateCatRequest) returns (UpdateCatResponse) {}
+    rpc DeleteCat (DeleteCatRequest) returns (DeleteCatResponse) {}
+}
+
+

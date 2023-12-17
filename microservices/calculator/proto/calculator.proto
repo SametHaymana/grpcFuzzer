@@ -1,0 +1,149 @@
+syntax = "proto3";
+
+package Calculator;
+
+message SumRequest {
+    repeated int32 numbers = 1;
+}
+
+message SumResponse {
+    int64 sum = 1;
+}
+
+message ComputeAverageRequest {
+    repeated int32 numbers = 1;
+}
+
+message ComputeAverageResponse {
+    double average = 1;
+}
+
+message FactorialRequest {
+    int32 number = 1;
+}
+
+message FactorialResponse {
+    int64 result = 1;
+}
+
+message SquareRootRequest {
+    int32 number = 1;
+}
+
+message SquareRootResponse {
+    double result = 1;
+}
+
+message CubeRootRequest {
+    int32 number = 1;
+}
+
+message CubeRootResponse {
+    double result = 1;
+}
+
+message MaxRequest {
+    repeated int32 numbers = 1;
+}
+
+message MaxResponse {
+    int32 result = 1;
+}
+
+message MinRequest {
+    repeated int32 numbers = 1;
+}
+
+message MinResponse {
+    int32 result = 1;
+}
+
+message MeanRequest {
+    repeated int32 numbers = 1;
+}
+
+message MeanResponse {
+    double result = 1;
+}
+
+message MedianRequest {
+    repeated int32 numbers = 1;
+}
+
+message MedianResponse {
+    double result = 1;
+}
+
+
+
+message SinRequest {
+    double angle = 1;
+}
+
+message SinResponse {
+    double result = 1;
+}
+
+message CosRequest {
+    double angle = 1;
+}
+
+message CosResponse {
+    double result = 1;
+}
+
+message TanRequest {
+    double angle = 1;
+}
+
+message TanResponse {
+    double result = 1;
+}
+
+message MatrixAdditionRequest {
+    repeated int32 matrix1 = 1;
+    repeated int32 matrix2 = 2;
+}
+
+message MatrixAdditionResponse {
+    repeated int32 result = 1;
+}
+
+message MatrixSubtractionRequest {
+    repeated int32 matrix1 = 1;
+    repeated int32 matrix2 = 2;
+}
+
+message MatrixSubtractionResponse {
+    repeated int32 result = 1;
+}
+
+
+
+
+service Calculator {
+    rpc Sum(SumRequest) returns (SumResponse) {}
+    rpc Average(ComputeAverageRequest) returns (ComputeAverageResponse) {}
+    rpc Factorial(FactorialRequest) returns (FactorialResponse) {}
+    
+    //Advanced Arithmetic Operations
+    rpc SquareRoot(SquareRootRequest) returns (SquareRootResponse) {}
+    rpc CubeRoot(CubeRootRequest) returns (CubeRootResponse) {}
+
+    // Statistical Functions
+    rpc Max(MaxRequest) returns (MaxResponse) {}
+    rpc Min(MinRequest) returns (MinResponse) {}
+    rpc Mean(MeanRequest) returns (MeanResponse) {}
+    rpc Median(MedianRequest) returns (MedianResponse) {}
+
+    // Trigonometric Functions
+    rpc Sin(SinRequest) returns (SinResponse) {}
+    rpc Cos(CosRequest) returns (CosResponse) {}
+    rpc Tan(TanRequest) returns (TanResponse) {}
+
+
+    // Matrix Operations
+    rpc MatrixAddition(MatrixAdditionRequest) returns (MatrixAdditionResponse) {}
+    rpc MatrixSubtraction(MatrixSubtractionRequest) returns (MatrixSubtractionResponse) {}
+
+}
