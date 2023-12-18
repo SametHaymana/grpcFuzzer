@@ -153,6 +153,7 @@ Also fuzzer store request and related errors as json format named "errorResponse
 [A short fuzzing](./files/videos/short-running.mp4)
 [Little long fuzzing](./files/videos/long-running.mp4)
 [Fuzzing with verbose](./files/videos/with-verbose.mp4)
+[Fuzzing Test On Calculator](https://youtu.be/3v6-cxBJWm8)
 
 ### Referances
 
